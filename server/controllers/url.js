@@ -29,7 +29,12 @@ async function handleGetAnalytics(req, res) {
   });
 }
 
+async function handleGetAllAnalytics(req,res){
+  const result=await URL.find({});
+  return res.json({analytics:result});
+}
 module.exports = {
   handleGenerateShortUrl,
   handleGetAnalytics,
+  handleGetAllAnalytics,
 };
